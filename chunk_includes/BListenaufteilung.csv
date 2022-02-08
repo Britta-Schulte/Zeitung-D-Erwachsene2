@@ -1,9 +1,9 @@
 Liste,TopImage,BottomImage
-Liste1,B1Uberschrift.html,B1Absatz1.png
-Liste2,B2Uberschrift.png,B2Absatz1.png
-Liste1,B1Absatz2.png,B1Absatz3.png
+Liste1,B1Uberschrift.html,B1Absatz1.html
+Liste2,B2Uberschrift.html,B2Absatz1.png
+Liste1,B1Absatz2.html,B1Absatz3.html
 Liste2,B2Absatz2.png,B2Absatz3.png
-Liste1,B1Absatz4.png,B1Absatz5.png
+Liste1,B1Absatz4.html,B1Absatz5.html
 Liste2,B2Absatz4.png,B2Absatz5.png
-Liste1,B1Absatz6.png,B1Absatz7.png
+Liste1,B1Absatz6.html,B1Absatz7.html
 Liste2,B2Absatz6.png,B2Absatz7.png
