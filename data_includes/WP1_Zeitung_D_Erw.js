@@ -134,7 +134,7 @@ newImage("Erklärbild","Erklärbild.png")
     .print()
 ,
 
-newText("Test", "<font color=#DF0101> Probieren Sie dies hier einmal aus und geben Sie einen <br> beliebigen Text ein. Bestätigen Sie die Eingabe mit <strong>Enter</strong>.<br> Danach können Sie das Experiment starten.</font>")
+newText("Test", "<font color=#DF0101> Hier einmal das Prinzip testen und geben  einen <br> beliebigen Text eingeben. Die Eingabe mit <strong>Enter</strong> bestätigen.<br> Danach startet das Experiment.</font>")
     .settings.css("width, 20%")
     
      ,
@@ -367,7 +367,7 @@ newTrial("Meta1",
               //Leiter
                newText("Leiter","<b>Die untenstehende Leiter</b> repr&auml;sentiert den relativen Sozialstatus der Menschen in Deutschland. "
                        +"An der Spitze der Leiter stehen Menschen mit relativ hohem Status – diejenigen, die das meiste Geld, die beste Bildung und die angesehensten Arbeitspl&auml;tze haben. Ganz unten sind Menschen mit relativ niedrigem Status – beispielsweise als arbeitslos Gemeldete. Relativ weit unten zu verorten w&auml;ren auch diejenigen, die nur wenig Geld verdienen, einen niedrigen Bildungstand haben, und / oder Berufe aus&uuml;ben, die die Gesellschaft als eher wenig respektabel ansieht."
-                       +"<br> Wo w&uuml;rden Sie Sich auf dieser Leiter einordnen? W&auml;hlen Sie bitte die Sprosse, dieIhrem empfundenen Sozialstatus am ehesten entspricht.")
+                       +"<br> Bitte auf dieser Leiter einordnen. Bitte die Sprosse wählen, die dem empfundenen Sozialstatus am ehesten entspricht.")
                .settings.css("font-size", "18px")
                .settings.css("text-align","justify")
                ,
@@ -584,7 +584,7 @@ newText("Leerzeile"," <br></p>")
 ),
 
 newTrial("Final",
-         newText("<p>Vielen Dank f&uuml;r Ihre Teilnahme! Die Studie ist hiermit beendet. </p>")
+         newText("<p>Vielen Dank f&uuml;r die Teilnahme! Die Studie ist hiermit beendet. </p>")
             .settings.css("font-family","times new roman") .settings.css("font-size", "18px")
             .settings.center()
             .print()
