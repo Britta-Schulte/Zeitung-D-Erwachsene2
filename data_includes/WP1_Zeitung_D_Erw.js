@@ -233,7 +233,7 @@ newTrial("Meta1",
         .print()
  ,
  
-    newText("Meta-1", "<b>Personenbezogene Daten</b> <p>Wir brauchen einige Angaben zu Deiner Person. Diese werden anonymisiert gespeichert und eine spätere Zuordnung zu Dir wird nicht möglich sein. Bitte nimm Dir beim Ausfüllen der Felder Zeit.<p>")
+    newText("Meta-1", "<b>Personenbezogene Daten</b> <p>Wir brauchen einige persönliche Angaben. Diese werden anonymisiert gespeichert und eine spätere Zuordnung wird nicht möglich sein. Bitte beim Ausfüllen der Felder Zeit nehmen.<p>")
  //       .settings.css("text-align","justify")
         .center()
         .print()
