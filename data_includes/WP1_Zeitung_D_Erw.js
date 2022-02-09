@@ -134,7 +134,7 @@ newImage("Erklärbild","Erklärbild.png")
     .print()
 ,
 
-newText("Test", "<font color=#DF0101> Probieren Sie dies hier einmal aus und geben Sie einen <br> beliebigen Text ein. Bestätigen Sie die Eingabe mit <strong>Enter</strong>.<br> Danach können Sie das Experiment starten.</font>")
+newText("Test", "<font color=#DF0101> Probier dies hier einmal aus und gieb einen <br> beliebigen Text ein. Bestätigen die Eingabe mit <strong>Enter</strong>.<br> Danach kannst das Experiment starten.</font>")
     .settings.css("width, 20%")
     
      ,
@@ -158,7 +158,7 @@ getTextInput("Probe")
     .wait()
 ,
 
-newText("Weiter","<p><br>Klicken Sie nun bitte auf den Button, um das Experiment zu beginnen.")
+newText("Weiter","<p><br>Bitte klicke nun auf den Button, um das Experiment zu beginnen.")
     .center()
     .print()
 ,
@@ -295,7 +295,7 @@ newTrial("Meta1",
                 .print()
                  ,
                  //aufgewachsen
-            newText("aufgewachsen", "Wo sind Sie aufgewachsen?")
+            newText("aufgewachsen", "Wo bist du aufgewachsen?")
                .settings.css("font-size", "18px")
                .settings.bold()
                ,
@@ -330,7 +330,7 @@ newTrial("Meta1",
                .print()
                ,
                //Studium
-               newText("studium","<b>Studieren Sie?</b><br><small>(Falls ja, welches Fach und Fachsemester?)</small><br><br>")
+               newText("studium","<b>Studierst du?</b><br><small>(Falls ja, welches Fach und Fachsemester?)</small><br><br>")
                .settings.css("font-size", "18px")
                
                , 
@@ -367,7 +367,7 @@ newTrial("Meta1",
               //Leiter
                newText("Leiter","<b>Die untenstehende Leiter</b> repr&auml;sentiert den relativen Sozialstatus der Menschen in Deutschland. "
                        +"An der Spitze der Leiter stehen Menschen mit relativ hohem Status – diejenigen, die das meiste Geld, die beste Bildung und die angesehensten Arbeitspl&auml;tze haben. Ganz unten sind Menschen mit relativ niedrigem Status – beispielsweise als arbeitslos Gemeldete. Relativ weit unten zu verorten w&auml;ren auch diejenigen, die nur wenig Geld verdienen, einen niedrigen Bildungstand haben, und / oder Berufe aus&uuml;ben, die die Gesellschaft als eher wenig respektabel ansieht."
-                       +"<br> Wo w&uuml;rden Sie Sich auf dieser Leiter einordnen? W&auml;hlen Sie bitte die Sprosse, dieIhrem empfundenen Sozialstatus am ehesten entspricht.")
+                       +"<br> Wo w&uuml;rdest du dich auf dieser Leiter einordnen? W&auml;hle bitte die Sprosse, die deinem empfundenen Sozialstatus am ehesten entspricht.")
                .settings.css("font-size", "18px")
                .settings.css("text-align","justify")
                ,
@@ -426,7 +426,7 @@ newTrial("Meta1",
                 ).and(
              getTextInput("aufgewachsen").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("aufgewachsener","Bitte angeben wo Sie aufgewachsen sind.")
+                   newText("aufgewachsener","Bitte angeben wo du aufgewachsen bist.")
                    .settings.color("red")
                    .center()
                    .print())
@@ -460,7 +460,7 @@ newImage("HU","HU Logo.png")
         .print()
     ,
    
-       newText("SprachenMutter","<b>Welche Sprachen spricht/sprach Ihre Mutter?</b><br>Bitte sortieren und mit der am besten gesprochenen Sprache beginnen.")
+       newText("SprachenMutter","<b>Welche Sprachen spricht/sprach deine Mutter?</b><br>Bitte sortieren und mit der am besten gesprochenen Sprache beginnen.")
  //       .center()
         .print()
 ,
@@ -480,7 +480,7 @@ newText("Leerzeile"," <br></p>")
     .center()
     .print()
 ,
-    newText("SprachenVater","<b>Welche Sprachen spricht/sprach Ihr Vater?</b><br> Bitte sortieren und mit der am besten gesprochenen Sprache beginnen.")
+    newText("SprachenVater","<b>Welche Sprachen spricht/sprach dein Vater?</b><br> Bitte sortieren und mit der am besten gesprochenen Sprache beginnen.")
   //      .center()
         .print()
 ,
@@ -500,7 +500,7 @@ newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
                  ,
-       newText("SprachenSelbst","<b>Welche Sprachen sprechen Sie selbst im Alltag?</b><br> Mit wem und in welchen Situationen? Bitte sortieren und mit der am häufigsten gesprochenen Sprache beginnen.")
+       newText("SprachenSelbst","<b>Welche Sprachen sprichst du selbst im Alltag?</b><br> Mit wem und in welchen Situationen? Bitte sortieren und mit der am häufigsten gesprochenen Sprache beginnen.")
  //       .center()
         .print()
 ,
@@ -521,7 +521,7 @@ newText("Leerzeile"," <br></p>")
                 .print()
                  ,      
 
- newText("Dialekt","<b>Sprechen Sie einen Dialekt?</b><br> Mit wem und in welchen Situationen?")
+ newText("Dialekt","<b>Sprichst du einen Dialekt?</b><br> Mit wem und in welchen Situationen?")
 //        .center()
         .print()
 ,
@@ -568,7 +568,7 @@ newText("Leerzeile"," <br></p>")
              ).and(
              getTextInput("SprachenSelbst").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("errorselbst","Bitte angeben wo Sie aufgewachsen sind.")
+                   newText("errorselbst","Bitte angeben wo du aufgewachsen bist.")
                    .settings.color("red")
             ).and(
              getTextInput("Dialekt").test.text(/^.+/) // testing if at least one digit was written in the input box
@@ -584,7 +584,7 @@ newText("Leerzeile"," <br></p>")
 ),
 
 newTrial("Final",
-         newText("<p>Vielen Dank f&uuml;r Ihre Teilnahme! Die Studie ist hiermit beendet. </p>")
+         newText("<p>Vielen Dank f&uuml;r deine Teilnahme! Die Studie ist hiermit beendet. </p>")
             .settings.css("font-family","times new roman") .settings.css("font-size", "18px")
             .settings.center()
             .print()
