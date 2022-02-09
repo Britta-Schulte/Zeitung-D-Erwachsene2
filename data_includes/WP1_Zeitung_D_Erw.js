@@ -94,6 +94,7 @@ newTrial("Code",
         .print()
 ,
     newTextInput("Texteingabe-Code")
+         .log()
         .center()
         .print()
 ,
@@ -181,14 +182,14 @@ Template(
             
         ,
         newCanvas("Top_nebeneinander","auto","auto")
-            .add(600,40, newTextInput("Top_Korrektur").size(300,200) )
+            .add(600,40, newTextInput("Top_Korrektur").log().size(300,200) )
             .center().print()
         ,
         newHtml("TopImage",row.TopImage).print( getCanvas("Top_nebeneinander") )
             .settings.css("width","80%")
     ,
         newCanvas("Bottom_nebeneinander","auto","auto")
-            .add(600,40, newTextInput("Bottom_Korrektur").size(300,200) )
+            .add(600,40, newTextInput("Bottom_Korrektur").log().size(300,200) )
             .center().print()
         ,
         newHtml("BottomImage",row.BottomImage).print( getCanvas("Bottom_nebeneinander") )
