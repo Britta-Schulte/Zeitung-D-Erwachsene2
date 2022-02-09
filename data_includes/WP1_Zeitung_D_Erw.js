@@ -134,7 +134,7 @@ newImage("Erklärbild","Erklärbild.png")
     .print()
 ,
 
-newText("Test", "<font color=#DF0101> Hier einmal das Prinzip testen und geben  einen <br> beliebigen Text eingeben. Die Eingabe mit <strong>Enter</strong> bestätigen.<br> Danach startet das Experiment.</font>")
+newText("Test", "<font color=#DF0101> Hier einmal das Prinzip testen und einen <br> beliebigen Text eingeben. Die Eingabe mit <strong>Enter</strong> bestätigen.<br> Danach startet das Experiment.</font>")
     .settings.css("width, 20%")
     
      ,
@@ -158,7 +158,7 @@ getTextInput("Probe")
     .wait()
 ,
 
-newText("Weiter","<p><br>Klicken Sie nun bitte auf den Button, um das Experiment zu beginnen.")
+newText("Weiter","<p><br>Nun auf den Button klicken, um das Experiment zu beginnen.")
     .center()
     .print()
 ,
