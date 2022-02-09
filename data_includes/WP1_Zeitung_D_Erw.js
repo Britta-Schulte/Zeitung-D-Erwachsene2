@@ -134,7 +134,7 @@ newImage("Erklärbild","Erklärbild.png")
     .print()
 ,
 
-newText("Test", "<font color=#DF0101> Probier dies hier einmal aus und gieb einen <br> beliebigen Text ein. Bestätigen die Eingabe mit <strong>Enter</strong>.<br> Danach kannst das Experiment starten.</font>")
+newText("Test", "<font color=#DF0101> Probier dies hier einmal aus und gib einen <br> beliebigen Text ein. Bestätige die Eingabe mit <strong>Enter</strong>.<br> Danach kannst das Experiment starten.</font>")
     .settings.css("width, 20%")
     
      ,
