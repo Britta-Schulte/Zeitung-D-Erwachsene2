@@ -2,7 +2,7 @@ PennController.ResetPrefix(null);
 PennController.AddHost("https://amor.cms.hu-berlin.de/~idlsfbnd/zeitungsstudie/");
 PennController.DebugOff();
 
-Sequence("Counter","Trial","Info","Consent","Code","Anleitung","Meta1","Meta2");
+Sequence("Info","Consent","Code","Anleitung","Counter","Trial","Meta1","Meta2");
 SetCounter("Counter","inc",1);
 
 //New Consent 
@@ -168,26 +168,43 @@ Template(
     row => newTrial( "Trial" ,
         defaultImage.css("margin","1em")
         ,
-        newImage("Header","BHeader.png").center().print()
+        newImage("Header","BHeader.png")
+        .settings.css("width, 50%")
+        .center().print()
+            
         ,
         newCanvas("Top_nebeneinander","auto","auto")
-            .add(620,40, newTextInput("Top_Korrektur").size(300,200) )
+            .add(600,40, newTextInput("Top_Korrektur").size(300,200) )
             .center().print()
         ,
         newHtml("TopImage",row.TopImage).print( getCanvas("Top_nebeneinander") )
-            .size(500,600)
-        ,
+            .settings.css("width","80%")
+    ,
         newCanvas("Bottom_nebeneinander","auto","auto")
-            .add(620,40, newTextInput("Bottom_Korrektur").size(300,200) )
+            .add(600,40, newTextInput("Bottom_Korrektur").size(300,200) )
             .center().print()
         ,
-        newImage("BottomImage",row.BottomImage).print( getCanvas("Bottom_nebeneinander") )
+        newHtml("BottomImage",row.BottomImage).print( getCanvas("Bottom_nebeneinander") )
+            .settings.css("width","80%")
         ,
         getTextInput("Top_Korrektur").settings.log("final")
         ,             
         getTextInput("Bottom_Korrektur").settings.log("final")
-        ,             
-        newButton("Weiter","Weiter").center().print().wait()
+        ,   
+        newText("Leerzeile"," <br></p>")
+        .center()
+        .print()
+    ,
+        newButton("Weiter","Weiter")
+        .settings.css("font-family", "Courier New").settings.css("font-size", "14px")
+        .center().print()
+        .wait(
+            newFunction('dummy', ()=>true).test.is(true)
+            .and(getTextInput("Top_Korrektur").test.text(/[a-z]+/)
+                    .failure( newText('errorcode_top', "Korrektur eingeben.Wenn nichts korrigiert werden soll: keine Korrekturen eingeben").color("red").print() )
+            ).and(getTextInput("Bottom_Korrektur").test.text(/[a-z]+/)
+                    .failure( newText('errorcode_bottom', "Korrektur eingeben.Wenn nichts korrigiert werden soll: keine Korrekturen eingeben").color("red").print() )       
+            ))
     )
     .log( "Group" , row.Liste  )
     .log( "TopText",row.TopImage )
