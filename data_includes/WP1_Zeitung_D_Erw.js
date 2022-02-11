@@ -113,7 +113,7 @@ newTrial("Code",
         .print()
         .wait(
             getTextInput("Texteingabe-Code").test.text(/^.+/)
-                    .failure( newText('errorcode', "Bitte gib den Code ein.").color("red") .center().print() )
+                    .failure( newText('errorcode', "<br>Bitte gib den Code ein.").color("red") .center().print() )
             )
 ,
     newText("Leerzeile"," <br></p>")
