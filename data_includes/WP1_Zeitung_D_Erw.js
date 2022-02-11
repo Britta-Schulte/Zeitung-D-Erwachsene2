@@ -135,7 +135,7 @@ newImage("Erklärbild","Erklärbild.png")
 ,
 
 newText("Test", "<font color=#DF0101> Bitte hier einmal ausprobieren und einen <br> beliebigen Text eingeben. Die Eingabe dann mit <strong>Enter</strong> bestätigen.<br> Danach kann das Experiment gestartet werden.</font>")
-    .settings.css("width, 20%"; "text-align", "justify")
+    .settings.css("width, 20%", "text-align", "justify")
 
 
      ,
