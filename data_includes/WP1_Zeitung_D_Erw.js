@@ -134,7 +134,7 @@ newImage("Erklärbild","Erklärbild.png")
     .print()
 ,
 
-newText("Test", "<font color=#DF0101> Probieren Sie dies hier einmal aus und geben Sie einen <br> beliebigen Text ein. Bestätigen Sie die Eingabe mit <strong>Enter</strong>.<br> Danach können Sie das Experiment starten.</font>")
+newText("Test", "<font color=#DF0101> Bitte hier einmal ausprobieren und einen <br> beliebigen Text eingeben. Die Eingabe dann mit <strong>Enter</strong> bestätigen.<br> Danach kann das Experiment gestartet werden.</font>")
     .settings.css("width, 20%")
 
      ,
@@ -158,7 +158,7 @@ getTextInput("Probe")
     .wait()
 ,
 
-newText("Weiter","<p><br>Klicken Sie nun bitte auf den Button, um das Experiment zu beginnen.")
+newText("Weiter","<p><br>Auf den Button klicken, um das Experiment zu beginnen.")
     .center()
     .print()
 ,
@@ -233,7 +233,7 @@ newTrial("Meta1",
         .print()
  ,
 
-    newText("Meta-1", "<b>Personenbezogene Daten</b> <p>Wir brauchen einige Angaben zu Deiner Person. Diese werden anonymisiert gespeichert und eine spätere Zuordnung zu Dir wird nicht möglich sein. Bitte nimm Dir beim Ausfüllen der Felder Zeit.<p>")
+    newText("Meta-1", "<b>Personenbezogene Daten</b> <p>Wir brauchen einige persönliche Angaben von Ihnen. Diese werden anonymisiert gespeichert und eine spätere Zuordnung zu Ihnen wird nicht möglich sein. Bitte nehmen Sie sich beim Ausfüllen der Felder Zeit.<p>")
  //       .settings.css("text-align","justify")
         .center()
         .print()
@@ -367,7 +367,7 @@ newTrial("Meta1",
               //Leiter
                newText("Leiter","<b>Die untenstehende Leiter</b> repr&auml;sentiert den relativen Sozialstatus der Menschen in Deutschland. "
                        +"An der Spitze der Leiter stehen Menschen mit relativ hohem Status – diejenigen, die das meiste Geld, die beste Bildung und die angesehensten Arbeitspl&auml;tze haben. Ganz unten sind Menschen mit relativ niedrigem Status – beispielsweise als arbeitslos Gemeldete. Relativ weit unten zu verorten w&auml;ren auch diejenigen, die nur wenig Geld verdienen, einen niedrigen Bildungstand haben, und / oder Berufe aus&uuml;ben, die die Gesellschaft als eher wenig respektabel ansieht."
-                       +"<br> Wo w&uuml;rden Sie Sich auf dieser Leiter einordnen? W&auml;hlen Sie bitte die Sprosse, dieIhrem empfundenen Sozialstatus am ehesten entspricht.")
+                       +"<br> Wo w&uuml;rden Sie Sich auf dieser Leiter einordnen? W&auml;hlen Sie bitte die Sprosse, die Ihrem empfundenen Sozialstatus am ehesten entspricht.")
                .settings.css("font-size", "18px")
                .settings.css("text-align","justify")
                ,
@@ -426,7 +426,7 @@ newTrial("Meta1",
                 ).and(
              getTextInput("aufgewachsen").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("aufgewachsener","Bitte angeben wo Sie aufgewachsen sind.")
+                   newText("aufgewachsener","Bitte angeben, wo Sie aufgewachsen sind.")
                    .settings.color("red")
                    .center()
                    .print())
@@ -593,7 +593,7 @@ newTrial("Final",
             .print()
         ,
 
-        newText ("<p>Du kannst das Fenster jetzt schließen.")
+        newText ("<p>Sie können das Fenster jetzt schließen.")
             .settings.css("font-family","times new roman") .settings.css("font-size", "18px")
             .settings.center()
             .print()
