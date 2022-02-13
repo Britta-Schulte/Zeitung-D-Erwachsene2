@@ -134,7 +134,7 @@ newImage("Erklärbild","Erklärbild.png")
     .print()
 ,
 
-newText("Test", "<font color=#DF0101> Bitte hier einmal ausprobieren und einen <br> beliebigen Text eingeben. Die Eingabe dann mit <strong>Enter</strong> bestätigen.<br> Danach kann das Experiment gestartet werden.</font>")
+newText("Test", "<font color=#DF0101> Bitte hier einmal ausprobieren und einen  beliebigen Text <br>eingeben. Die Eingabe dann mit <strong>Enter</strong> bestätigen.<br> Danach kann das Experiment gestartet werden.</font>")
     .settings.css("width, 15%", "text-align, justify")
 
 
@@ -182,14 +182,14 @@ Template(
 
         ,
         newCanvas("Top_nebeneinander","auto","auto")
-            .add(600,40, newTextInput("Top_Korrektur").size(300,200) )
+            .add(600,40, newTextInput("Top_Korrektur").size(300,200) .lines(15) )
             .center().print()
         ,
         newHtml("TopImage",row.TopImage).print( getCanvas("Top_nebeneinander") )
             .settings.css("width","80%")
     ,
         newCanvas("Bottom_nebeneinander","auto","auto")
-            .add(600,40, newTextInput("Bottom_Korrektur").size(300,200) )
+            .add(600,40, newTextInput("Bottom_Korrektur").size(300,200) .lines(15) )
             .center().print()
         ,
         newHtml("BottomImage",row.BottomImage).print( getCanvas("Bottom_nebeneinander") )
