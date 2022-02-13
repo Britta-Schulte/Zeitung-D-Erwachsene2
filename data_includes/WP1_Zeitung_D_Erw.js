@@ -209,9 +209,9 @@ Template(
         .wait(
             newFunction('dummy', ()=>true).test.is(true)
             .and(getTextInput("Top_Korrektur").test.text(/[a-z]+/)
-                    .failure( newText('errorcode_top', "Korrektur eingeben.Wenn nichts korrigiert werden soll: keine Korrekturen eingeben").color("red").print() )
+                    .failure( newText('errorcode_top', "<br>Korrektur eingeben.Wenn nichts korrigiert werden soll: keine Korrekturen eingeben").color("red").print() )
             ).and(getTextInput("Bottom_Korrektur").test.text(/[a-z]+/)
-                    .failure( newText('errorcode_bottom', "Korrektur eingeben.Wenn nichts korrigiert werden soll: keine Korrekturen eingeben").color("red").print() )
+                    .failure( newText('errorcode_bottom', "<br>Korrektur eingeben.Wenn nichts korrigiert werden soll: keine Korrekturen eingeben").color("red").print() )
             ))
     )
     .log( "Group" , row.Liste  )
@@ -403,31 +403,31 @@ newTrial("Meta1",
             newFunction('dummy', ()=>true).test.is(true)
             // age
             .and( getDropDown("age").test.selected()
-                    .failure( newText('errorage', "Bitte Alter angeben.").color("red") .center().print() )
+                    .failure( newText('errorage', "<br>Bitte Alter angeben.").color("red") .center().print() )
             // sex
             ).and( getDropDown("sex").test.selected()
-                    .failure( newText('errorsex', "Bitte Geschlecht angeben.").color("red") .center().print() )
+                    .failure( newText('errorsex', "<br>Bitte Geschlecht angeben.").color("red") .center().print() )
              // abschluss
             ) .and( getDropDown("abschluss").test.selected()
-                    .failure( newText('errorabschluss', "Bitte höchsten Abschluss angeben.").color("red") .center().print() )
+                    .failure( newText('errorabschluss', "<br>Bitte höchsten Abschluss angeben.").color("red") .center().print() )
 
             ).and( getDropDown("studium").test.selected()
-                   .failure( newText('errorstudium', "Bitte Studium angeben.").color("red") .center().print() )
+                   .failure( newText('errorstudium', "<br>Bitte Studium angeben.").color("red") .center().print() )
 
             ).and(getDropDown("leiter").test.selected()
-                   .failure( newText('leitererr', "Bitte Variante auf der Leiter angeben.").color("red") .center().print() )
+                   .failure( newText('leitererr', "<br>Bitte Variante auf der Leiter angeben.").color("red") .center().print() )
 
             ).and(
              getTextInput("wohnort").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("wohnorter","Bitte Wohnort angeben")
+                   newText("wohnorter","<br>Bitte Wohnort angeben")
                    .settings.color("red")
                    .center()
                    .print())
                 ).and(
              getTextInput("aufgewachsen").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("aufgewachsener","Bitte angeben, wo Sie aufgewachsen sind.")
+                   newText("aufgewachsener","<br>Bitte angeben, wo Sie aufgewachsen sind.")
                    .settings.color("red")
                    .center()
                    .print())
@@ -555,26 +555,26 @@ newText("Leerzeile"," <br></p>")
                 .and(
              getTextInput("SprachenMutter").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("errormutter","Bitte Sprachen der Mutter angeben")
+                   newText("errormutter","<br>Bitte Sprachen der Mutter angeben")
                    .settings.color("red")
                    .center()
                    .print())
                 ).and(
              getTextInput("SprachenVater").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("errorvater","Bitte Sprachen des Vaters angeben.")
+                   newText("errorvater","<br>Bitte Sprachen des Vaters angeben.")
                    .settings.color("red")
                    .center()
                    .print())
              ).and(
              getTextInput("SprachenSelbst").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("errorselbst","Bitte angeben wo Sie aufgewachsen sind.")
+                   newText("errorselbst","<br>Bitte angeben wo Sie aufgewachsen sind.")
                    .settings.color("red")
             ).and(
              getTextInput("Dialekt").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("errordialekt","Bitte Dialekt angeben.")
+                   newText("errordialekt","<br>Bitte Dialekt angeben.")
                    .settings.color("red")
                    .center()
                    .print())
