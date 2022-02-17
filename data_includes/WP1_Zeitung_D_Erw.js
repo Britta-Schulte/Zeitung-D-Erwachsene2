@@ -1,7 +1,7 @@
 PennController.ResetPrefix(null);
 PennController.AddHost("https://amor.cms.hu-berlin.de/~idlsfbnd/zeitungsstudie/");
 PennController.DebugOff();
-
+var progressBarText = "Fortschritt";  
 Sequence("Info","Consent","Code","Anleitung","Counter","Trial","Meta1","Meta2","send","Final");
 SetCounter("Counter","inc",1);
 
@@ -208,9 +208,9 @@ Template(
         .center().print()
         .wait(
             newFunction('dummy', ()=>true).test.is(true)
-            .and(getTextInput("Top_Korrektur").test.text(/[a-z]+/)
+            .and(getTextInput("Top_Korrektur").test.text(/^.+/)
                     .failure( newText('errorcode_top', "<br>Korrektur eingeben.Wenn nichts korrigiert werden soll: keine Korrekturen eingeben").color("red").print() )
-            ).and(getTextInput("Bottom_Korrektur").test.text(/[a-z]+/)
+            ).and(getTextInput("Bottom_Korrektur").test.text(/^.+/)
                     .failure( newText('errorcode_bottom', "<br>Korrektur eingeben.Wenn nichts korrigiert werden soll: keine Korrekturen eingeben").color("red").print() )
             ))
     )
@@ -320,7 +320,7 @@ newTrial("Meta1",
                .settings.bold()
                ,
                newDropDown("abschluss", "Bitte eine Option ausw&auml;hlen")
-               .settings.add("kein Abschluss","Schulabschluss","Abitur oder gleichwertiger Abschluss","Studium ohne Abschluss","Bachelor","Master", "Promotion", "Ausbildung", "Sonstige")     // MAYBE ADD QUESTIONS ABOUT DIALECT AND DOMINANT HAND
+               .settings.add("kein Abschluss","Schulabschluss","Abitur oder gleichwertiger Abschluss","Studium ohne Abschluss","Bachelor","Master", "Promotion","Magister","Diplom", "Ausbildung", "Sonstige")     // MAYBE ADD QUESTIONS ABOUT DIALECT AND DOMINANT HAND
                //.settings.size(191,20)
                .log()
                ,
@@ -328,6 +328,40 @@ newTrial("Meta1",
                .settings.add(0, 0, getText("abschluss"))
                .settings.add(470,4, getDropDown("abschluss"))
                //.settings.center()
+               .print()
+               ,
+               //Studium
+               newText("schule","<b>Sind Sie in Deutschland zur Schule gegangen?</b><br><small>(Falls nein, wo?)</small><br><br>")
+               .settings.css("font-size", "18px")
+
+               ,
+               newTextInput("schuleinput")
+               .settings.size(150,40)
+               .log()
+               .settings.hidden()
+               ,
+               newText("schule_input", "")
+               .settings.after(getTextInput("studiuminput"))
+               ,
+               newDropDown("schule",  "<br>" +"Bitte eine Option ausw&auml;hlen")
+               .settings.add("Ja", "Nein")
+               .log()
+               .settings.after(getText("schule_input"))
+               .settings.callback(
+                   getDropDown("schule")
+                   .test.selected("NEIN")
+                   .success(getTextInput("schuleinput").settings.visible(
+
+                   )) )
+               ,
+               newCanvas("schule", 1000, 40)
+               .settings.add(0, 0, getText("schule"))
+               .settings.add(500,3, getDropDown("schule"))
+               //.settings.center()
+               .print()
+               ,
+               newCanvas("filler", 1, 20)
+
                .print()
                ,
                //Studium
@@ -413,7 +447,8 @@ newTrial("Meta1",
 
             ).and( getDropDown("studium").test.selected()
                    .failure( newText('errorstudium', "<br>Bitte Studium angeben.").color("red") .center().print() )
-
+             ).and( getDropDown("schule").test.selected()
+                   .failure( newText('errorschule', "<br>Bitte Land der Beschulung angeben.").color("red") .center().print() )
             ).and(getDropDown("leiter").test.selected()
                    .failure( newText('leitererr', "<br>Bitte Variante auf der Leiter angeben.").color("red") .center().print() )
 
