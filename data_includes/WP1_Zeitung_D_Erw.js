@@ -319,7 +319,7 @@ newTrial("Meta1",
                .settings.bold()
                ,
                newDropDown("abschluss", "Bitte eine Option ausw&auml;hlen")
-               .settings.add("kein Abschluss","Schulabschluss","Abitur oder gleichwertiger Abschluss","Studium ohne Abschluss","Bachelor","Master", "Promotion", "Ausbildung", "Sonstige")     // MAYBE ADD QUESTIONS ABOUT DIALECT AND DOMINANT HAND
+               .settings.add("kein Abschluss","Schulabschluss","Abitur oder gleichwertiger Abschluss","Studium ohne Abschluss","Bachelor","Master","Diplom / Magister", "Promotion", "Ausbildung", "Sonstige")     // MAYBE ADD QUESTIONS ABOUT DIALECT AND DOMINANT HAND
                //.settings.size(191,20)
                .settings.log()
                ,
