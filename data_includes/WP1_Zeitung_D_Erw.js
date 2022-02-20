@@ -330,7 +330,7 @@ newTrial("Meta1",
                //.settings.center()
                .print()
                ,
-               //Studium
+               //Schule
                newText("schule","<b>Sind Sie in Deutschland zur Schule gegangen?</b><br><small>(Falls nein, wo?)</small><br><br>")
                .settings.css("font-size", "18px")
 
@@ -354,9 +354,9 @@ newTrial("Meta1",
 
                    )) )
                ,
-               newCanvas("schule", 1000, 40)
+               newCanvas("schule", 800, 40)
                .settings.add(0, 0, getText("schule"))
-               .settings.add(500,3, getDropDown("schule"))
+               .settings.add(400,3, getDropDown("schule"))
                //.settings.center()
                .print()
                ,
