@@ -349,7 +349,7 @@ newTrial("Meta1",
                .settings.after(getText("schule_input"))
                .settings.callback(
                    getDropDown("schule")
-                   .test.selected("NEIN")
+                   .test.selected("Nein")
                    .success(getTextInput("schuleinput").settings.visible(
 
                    )) )
