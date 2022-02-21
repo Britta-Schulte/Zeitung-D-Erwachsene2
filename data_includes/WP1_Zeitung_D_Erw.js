@@ -357,6 +357,7 @@ newTrial("Meta1",
                newCanvas("schule", 800, 40)
                .settings.add(0, 0, getText("schule"))
                .settings.add(400,3, getDropDown("schule"))
+               .settings.add(450,3, getTextInput("schuleinput")
                //.settings.center()
                .print()
                ,
