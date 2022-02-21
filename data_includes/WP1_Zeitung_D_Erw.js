@@ -411,7 +411,7 @@ newTrial("Meta1",
                .settings.add("A", "B", "C","D", "E", "F","G", "H", "I","J")
                .log()
                ,
-               newImage("leiter", "https://amor.cms.hu-berlin.de/~patarroa/Leiter.jpeg")
+               newImage("leiter", "Leiter.jpeg")
                .settings.size(200,300)
                ,
                newCanvas("leitercanvas", 1000,20)
