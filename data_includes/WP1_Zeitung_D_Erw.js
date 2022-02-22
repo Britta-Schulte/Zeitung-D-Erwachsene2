@@ -357,6 +357,7 @@ newTrial("Meta1",
                newCanvas("schule", 800, 40)
                .settings.add(0, 0, getText("schule"))
                .settings.add(400,3, getDropDown("schule"))
+               .settings.add(450,3, getTextInput("schuleinput")
                //.settings.center()
                .print()
                ,
@@ -410,7 +411,7 @@ newTrial("Meta1",
                .settings.add("A", "B", "C","D", "E", "F","G", "H", "I","J")
                .log()
                ,
-               newImage("leiter", "https://amor.cms.hu-berlin.de/~patarroa/Leiter.jpeg")
+               newImage("leiter", "Leiter.jpeg")
                .settings.size(200,300)
                ,
                newCanvas("leitercanvas", 1000,20)
