@@ -330,7 +330,7 @@ newTrial("Meta1",
                //.settings.center()
                .print()
                ,
-               //Schule
+               //Studium
                newText("schule","<b>Sind Sie in Deutschland zur Schule gegangen?</b><br><small>(Falls nein, wo?)</small><br><br>")
                .settings.css("font-size", "18px")
 
@@ -341,22 +341,22 @@ newTrial("Meta1",
                .settings.hidden()
                ,
                newText("schule_input", "")
-               .settings.after(getTextInput("studiuminput"))
+               .settings.after(getTextInput("schuleinput"))
                ,
                newDropDown("schule",  "<br>" +"Bitte eine Option ausw&auml;hlen")
-               .settings.add("Ja", "Nein")
+               .settings.add("Ja","Nein")
                .log()
                .settings.after(getText("schule_input"))
                .settings.callback(
                    getDropDown("schule")
                    .test.selected("Nein")
-                   .success(getTextInput("schuleinput").settings.visible(
+                   .success(getTextInput("schuleinput").settings.visible())
 
-                   )) )
+                    )
                ,
-               newCanvas("schule", 800, 40)
+               newCanvas("schule",1000, 40)
                .settings.add(0, 0, getText("schule"))
-               .settings.add(400,3, getDropDown("schule"))
+               .settings.add(470,3, getDropDown("schule"))
                //.settings.center()
                .print()
                ,
@@ -480,6 +480,7 @@ newTrial("Meta1",
                getDropDown("leiter").wait("first")
                ,
                getDropDown("abschluss").wait("first")
+  )
   ,
   //Metadaten 2: Sprachbiographie
 newTrial("Meta2",
@@ -593,19 +594,24 @@ newText("Leerzeile"," <br></p>")
                    newText("errormutter","<br>Bitte Sprachen der Mutter angeben")
                    .settings.color("red")
                    .center()
-                   .print())
+                   .print()
+                   )
                 ).and(
              getTextInput("SprachenVater").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
                    newText("errorvater","<br>Bitte Sprachen des Vaters angeben.")
                    .settings.color("red")
                    .center()
-                   .print())
-             ).and(
+                   .print()
+                   )
+                ).and(
              getTextInput("SprachenSelbst").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("errorselbst","<br>Bitte angeben wo Sie aufgewachsen sind.")
+                   newText("errorselbst","<br>Bitte angeben welche Sprachen Sie sprechen.")
                    .settings.color("red")
+                   .center()
+                   .print()
+                   )
             ).and(
              getTextInput("Dialekt").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
@@ -613,14 +619,14 @@ newText("Leerzeile"," <br></p>")
                    .settings.color("red")
                    .center()
                    .print())
-            )  )
+            ) 
 
+            )
  )
- )
-),
+,
 
 // Send results manually
-SendResults("send")
+SendResults("send");
 
 newTrial("Final",
          newText("<p>Vielen Dank f&uuml;r Ihre Teilnahme! Die Studie ist hiermit beendet. </p>")
